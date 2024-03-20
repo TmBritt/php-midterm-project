@@ -10,7 +10,6 @@ if ($method === 'OPTIONS') {
     exit();
 }
 
-
 // Database configuration
 $dbHost = 'dpg-cntiscfsc6pc73cbm6dg-a.oregon-postgres.render.com';
 $dbName = 'tai_britt_midterm';
@@ -19,7 +18,7 @@ $dbPassword = '38jf4qjbQk5IRu5qgLxksRY1ryrKb8gh';
 
 // Define database connection
 try {
-    $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUsername, $dbPassword);
+    $pdo = new PDO("pgsql:host=$dbHost;dbname=$dbName", $dbUsername, $dbPassword);
     // Set PDO to throw exceptions on errors
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -27,7 +26,8 @@ try {
 }
 
 // Define base URL
-$baseURL = "https://php-midterm-project.onrender.com/api/api";
+$baseURL = "https://php-midterm-project.onrender.com/api/";
+
 
 // Define response content type
 header("Content-Type: application/json");
