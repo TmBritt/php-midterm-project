@@ -11,24 +11,11 @@ if ($method === 'OPTIONS') {
 }
 
 
-<?php
-
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-$method = $_SERVER['REQUEST_METHOD'];
-
-if ($method === 'OPTIONS') {
-    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-    header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
-    exit();
-}
-
-
 // Database configuration
-$dbHost = 'localhost';
-$dbName = 'quotesdb';
-$dbUsername = 'tai_britt';
-$dbPassword = 'tai_password';
+$dbHost = 'dpg-cntiscfsc6pc73cbm6dg-a.oregon-postgres.render.com';
+$dbName = 'tai_britt_midterm';
+$dbUsername = 'tai_britt_midterm_user';
+$dbPassword = '38jf4qjbQk5IRu5qgLxksRY1ryrKb8gh';
 
 // Define database connection
 try {
@@ -40,7 +27,7 @@ try {
 }
 
 // Define base URL
-$baseURL = "https://tai-britt.hostname.com/api";
+$baseURL = "https://php-midterm-project.onrender.com/api/api";
 
 // Define response content type
 header("Content-Type: application/json");
